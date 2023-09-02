@@ -1,5 +1,5 @@
 import './input.css'
-function Input({ type, value, name, onChange }) {
+function Input({ type, value, name, onChange, onClick }) {
   return (
     <input
       className="userInput"
@@ -7,6 +7,7 @@ function Input({ type, value, name, onChange }) {
       name={name}
       value={value}
       onChange={(e) => onChange(e)}
+      onClick={(e) => onClick(e)}
     />
   )
 }

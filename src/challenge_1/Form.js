@@ -3,8 +3,8 @@ import './form.css'
 import FormButton from './FormButton'
 import {useState} from 'react'
 function Form() {
-  const [name, setName] = useState('')
-  const [age, setAge] = useState('')
+  const [name, setName] = useState('user name')
+  const [age, setAge] = useState(100)
   function changeNameHandler(e) {
     setName(e.target.value)
   }
@@ -17,15 +17,15 @@ function Form() {
         type='text'
         name='name'
         value={name}
-        onCnange={(e) => changeNameHandler(e)}
+        onChange={changeNameHandler}
       />
       <Input
         type='number'
         name='age'
         value={age}
-        onCnange={(e) => changeAgeHandler(e)}
+        onChange={changeAgeHandler}
       />
-      <FormButton />
+      <FormButton type='submit'/>
     </form>
   )
 }

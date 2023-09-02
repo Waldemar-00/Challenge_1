@@ -1,11 +1,13 @@
 import './input.css'
-function Input({ type, value, name }) {
+function Input({ type, value, name, onChange }) {
   return (
     <input
       className="userInput"
       type={type}
-    >
-    </input>
+      name={name}
+      value={value}
+      onChange={(e) => onChange(e)}
+    />
   )
 }
 export default Input

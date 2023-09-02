@@ -1,0 +1,8 @@
+.userLi {
+  height: 1.8rem;
+  border: 2px solid rgb(255, 139, 96);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: rgb(110, 110, 245);
+  background-color: aliceblue;
+}

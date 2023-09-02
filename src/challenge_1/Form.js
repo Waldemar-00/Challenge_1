@@ -1,7 +1,8 @@
 import Input from './Input'
 import './form.css'
 import FormButton from './FormButton'
-import {useState} from 'react'
+import List from './List'
+import { useState } from 'react'
 function Form() {
   const [name, setName] = useState('enter user name')
   const [age, setAge] = useState('enter user age')
@@ -27,23 +28,26 @@ function Form() {
     setAge('enter user age')
   }
   return (
-    <form className="userForm" onSubmit={(e) => getFormData(e)}>
-      <Input
-        type='text'
-        name='name'
-        value={name}
-        onChange={changeNameHandler}
-        onClick={focusHandlerName}
-      />
-      <Input
-        type='text'
-        name='age'
-        value={age}
-        onChange={changeAgeHandler}
-        onClick={focusHandlerAge}
-      />
-      <FormButton type='submit'/>
-    </form>
+    <>
+      <form className="userForm" onSubmit={(e) => getFormData(e)}>
+        <Input
+          type='text'
+          name='name'
+          value={name}
+          onChange={changeNameHandler}
+          onClick={focusHandlerName}
+        />
+        <Input
+          type='text'
+          name='age'
+          value={age}
+          onChange={changeAgeHandler}
+          onClick={focusHandlerAge}
+        />
+        <FormButton type='submit'/>
+      </form>
+      <List formData={formData}/>
+    </>
   )
 }
 export default Form 

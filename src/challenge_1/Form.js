@@ -3,16 +3,25 @@ import './form.css'
 import FormButton from './FormButton'
 import {useState} from 'react'
 function Form() {
-  const [name, setName] = useState('user name')
-  const [age, setAge] = useState(100)
+  const [name, setName] = useState('')
+  const [age, setAge] = useState('')
+  const [formData, setFormData] = useState([])
   function changeNameHandler(e) {
     setName(e.target.value)
   }
   function changeAgeHandler(e) {
     setAge(e.target.value)
   }
+  function getFormData(e) {
+    e.preventDefault()
+    setFormData(formData => {
+      return [...formData, { userName: name, userAge: age }]
+    })
+    setName('')
+    setAge(0)
+  }
   return (
-    <form className="userForm">
+    <form className="userForm" onSubmit={(e) => getFormData(e)}>
       <Input
         type='text'
         name='name'

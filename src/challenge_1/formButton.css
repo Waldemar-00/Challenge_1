@@ -7,6 +7,7 @@
   font-style: italic;
   font-weight: bold;
   cursor: pointer;
+  color:rgb(73, 4, 4)
 }
 .formButton:active {
   font-style: normal;

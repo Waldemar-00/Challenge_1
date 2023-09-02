@@ -1,0 +1,17 @@
+.userInput {
+  height: 1.7rem;
+  border: 2px solid rgb(136, 200, 252);
+  border-radius: 5px;
+  outline: 0;
+  font-weight: bold;
+  color: rgb(21, 105, 184);
+  font-size: 1.1rem;
+}
+.userInput:focus {
+  outline: 0;
+  border: 2px solid rgb(247, 207, 97);
+  background-color: rgb(252, 247, 235);
+  color: rgb(184, 27, 21);
+  font-weight: bold;
+  font-style: italic;
+}

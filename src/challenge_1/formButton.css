@@ -1,0 +1,15 @@
+.formButton {
+  background-color: rgb(227, 227, 255);
+  border: none;
+  border-radius: 5px;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  cursor: pointer;
+}
+.formButton:active {
+  font-style: normal;
+  transition: all 2 ease;
+  background-color: rgb(79, 235, 79);
+}

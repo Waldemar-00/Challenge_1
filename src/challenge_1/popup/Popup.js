@@ -1,5 +1,5 @@
 import './popup.css'
-function Popup({ isValid, textForh2}) {
+function Popup({ isValid, textForh2 }) {
   function onClickHandler(e) {
     e.stopPropagation()
     isValid(false)

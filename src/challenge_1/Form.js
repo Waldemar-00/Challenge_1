@@ -1,69 +1,59 @@
-import Input from './Input'
 import './form.css'
+import Input from './Input'
 import FormButton from './FormButton'
 import List from './List'
 import { useState } from 'react'
 function Form({ isValid }) {
-  const [name, setName] = useState('enter user name')
-  const [age, setAge] = useState('enter user age')
+  const [name, setName] = useState('')
+  const [age, setAge] = useState('')
   const [formData, setFormData] = useState([])
   const [invalid, setInvalid] = useState(false)
-  function focusHandlerName() {
-    setName('')
-    setInvalid(true)
-  }
-  function focusHandlerAge() {
-    setAge('')
-    setInvalid(true)
-  }
-  function onIsValid() {
+  function isIsValid() {
     isValid(invalid)
   }
   function changeNameHandler(e) {
-    if (name.trim().length > 1) {
-      setInvalid(false)
-    }
     setName(e.target.value)
   }
   function changeAgeHandler(e) {
-    if (age.trim().length > 1) {
+    setAge(e.target.value)
+  }
+  function checkInputs() {
+    if (name.trim().length < 1 || age.trim().length < 1) {
+      setInvalid(true)
+    } else {
       setInvalid(false)
     }
-    setAge(e.target.value)
   }
   function getFormData(e) {
     e.preventDefault()
+    if (invalid) return
     setFormData(formData => {
-      return [...formData, { userName: name, userAge: age }]
+      return [...formData, { userName: name, userAge: age,  }]
     })
-    setName('enter user name')
-    setAge('enter user age')
   }
   return (
     <>
       <form className="userForm" onSubmit={(e) => {
         getFormData(e)
-        onIsValid()
+        isIsValid()
       }}>
         <Input
+          id='enter user name'
           type='text'
           name='name'
           value={name}
-          onChange={changeNameHandler}
-          onClick={focusHandlerName}
+          onInput={changeNameHandler}
         />
         <Input
-          type='text'
+          id='enter user age'
+          type='number'
           name='age'
           value={age}
-          onChange={changeAgeHandler}
-          onClick={focusHandlerAge}
+          onInput={changeAgeHandler}
         />
-        <FormButton type='submit'/>
+        <FormButton type='submit' checkInputs={checkInputs}/>
       </form>
-      {
-        !invalid ? <List formData={formData} /> : null
-      }
+      <List formData={formData}/>
     </>
   )
 }

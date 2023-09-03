@@ -1,7 +1,13 @@
 import './formButton.css'
-function FormButton({type, text='add user'}) {
+function FormButton({ type, text = 'add user', checkInputs }) {
   return (
-    <button type={type} className="formButton">{text}</button>
+    <button
+      type={type}
+      className="formButton"
+      onClick={checkInputs}
+    >
+      {text}
+    </button>
   )
 }
 export default FormButton 

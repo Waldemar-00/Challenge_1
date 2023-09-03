@@ -1,14 +1,17 @@
 import './input.css'
-function Input({ type, value, name, onChange, onClick }) {
+function Input({ type, id, value, name, onInput }) {
   return (
-    <input
-      className="userInput"
-      type={type}
-      name={name}
-      value={value}
-      onChange={(e) => onChange(e)}
-      onClick={(e) => onClick(e)}
-    />
+    <>
+      <label htmlFor={id} className="label">{id}</label>
+      <input
+        id={id}
+        className="userInput"
+        type={type}
+        name={name}
+        value={value}
+        onInput={(e) => onInput(e)}
+        />
+    </>
   )
 }
 export default Input

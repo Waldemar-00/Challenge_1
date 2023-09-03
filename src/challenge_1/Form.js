@@ -8,8 +8,9 @@ function Form({ isValid }) {
   const [age, setAge] = useState('')
   const [formData, setFormData] = useState([])
   const [invalid, setInvalid] = useState(false)
+  const [textForh2, setTextForh2] = useState('These fields can not be empty.')
   function isIsValid() {
-    isValid(invalid)
+    isValid(invalid, textForh2)
   }
   function changeNameHandler(e) {
     setName(e.target.value)
@@ -18,7 +19,11 @@ function Form({ isValid }) {
     setAge(e.target.value)
   }
   function checkInputs() {
-    if (name.trim().length < 1 || age.trim().length < 1) {
+    if (age < 0) {
+      setTextForh2('This field can not be less zero.')
+      setInvalid(true)
+    }
+    else if (name.trim().length < 1 || age.trim().length < 1) {
       setInvalid(true)
     } else {
       setInvalid(false)

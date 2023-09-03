@@ -20,14 +20,14 @@ function Form({ isValid }) {
     isValid(invalid)
   }
   function changeNameHandler(e) {
-    if (name.trim().length < 1) {
-      setInvalid(true)
+    if (name.trim().length > 1) {
+      setInvalid(false)
     }
     setName(e.target.value)
   }
   function changeAgeHandler(e) {
-    if (age.trim().length < 1) {
-      setInvalid(true)
+    if (age.trim().length > 1) {
+      setInvalid(false)
     }
     setAge(e.target.value)
   }

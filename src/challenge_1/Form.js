@@ -32,7 +32,10 @@ function Form({ isValid }) {
   }
   function getFormData(e) {
     e.preventDefault()
-    if (invalid) return
+    if (invalid) {
+      setTextForh2('These fields can not be empty.')
+      return
+    }
     setFormData(formData => {
       return [...formData, { userName: name, userAge: age,  }]
     })

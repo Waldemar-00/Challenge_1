@@ -6,10 +6,10 @@ function List({formData}) {
     <ul className="userList">
       {
         formData.map(obj => {
-          return obj.userName ? <Li
+          return obj.name ? <Li
             key={v4()}
-            name={obj.userName}
-            age={obj.userAge}
+            name={obj.name}
+            age={obj.age}
           /> : null
         })
       }

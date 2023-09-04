@@ -37,7 +37,7 @@ function Form({ isValid }) {
       return
     }
     setFormData(formData => {
-      return [...formData, { userName: name, userAge: age,  }]
+      return [...formData, { name, age }]
     })
     setName('')
     setAge('')

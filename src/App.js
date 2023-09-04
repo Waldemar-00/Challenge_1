@@ -13,9 +13,7 @@ function App() {
     <div className="App">
       <h1>Hello Challenge number 1</h1>
       <Form isValid={isValid}/>
-      {
-        popUp ? <Popup textForh2={text} isValid={isValid}/> : null
-      }
+      {popUp ? <Popup textForh2={text} isValid={isValid}/> : null}
     </div>
   ) 
 }

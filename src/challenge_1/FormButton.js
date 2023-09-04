@@ -1,5 +1,5 @@
 import './formButton.css'
-function FormButton({ type, text = 'add user', checkInputs }) {
+function Button({ type, text = 'add user', checkInputs }) {
   return (
     <button
       type={type}
@@ -10,4 +10,4 @@ function FormButton({ type, text = 'add user', checkInputs }) {
     </button>
   )
 }
-export default FormButton 
+export default Button 

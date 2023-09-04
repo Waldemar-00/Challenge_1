@@ -19,8 +19,8 @@ function Form({ isValid }) {
     setAge(e.target.value)
   }
   function checkInputs() {
-    if (age < 0) {
-      setTextForh2('This field can not be less zero.')
+    if (age < 0 || age === '0') {
+      setTextForh2('Field of age can not be less zero or equal to zero.')
       setInvalid(true)
     }
     else if (name.trim().length < 1 || age.trim().length < 1) {
